@@ -12,9 +12,9 @@ function App() {
   useEffect( ()=>{
     const obtenerLS = () =>{
       const bicisLS = JSON.parse(localStorage.getItem('bicicletas')) ?? [];
-
       setBicicletas(bicisLS)
     }
+    obtenerLS();
   },[])
 
   useEffect( ()=>{
@@ -23,7 +23,6 @@ function App() {
 
   const eliminarBicicleta = id => {
     const biciActualizada = bicicletas.filter( bici => bici.id !== id);
-
     setBicicletas(biciActualizada)
   }
 
